@@ -1,4 +1,7 @@
 ﻿
+using DBOperationsWithEfCore.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace DBOperationsWithEfCore;
 
 public class Program
@@ -7,6 +10,7 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        builder.Services.AddDbContext<AppDbContext>(options => options.UseMysql());
         // Add services to the container.
 
         builder.Services.AddControllers();
