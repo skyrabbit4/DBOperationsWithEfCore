@@ -1,6 +1,6 @@
 ﻿namespace DBOperationsWithEfCore;
 
-//test
+//test1
 public class WeatherForecast
 {
     public DateOnly Date { get; set; }
