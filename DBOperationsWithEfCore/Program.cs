@@ -10,7 +10,8 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddDbContext<AppDbContext>(options => options.UseMysql());
+        builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("AppDb")));
+
         // Add services to the container.
 
         builder.Services.AddControllers();
