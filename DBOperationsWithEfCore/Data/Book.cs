@@ -9,7 +9,9 @@ namespace DBOperationsWithEfCore.Data
         public int NoOfPages { get; set; }
         public bool IsActive { get; set; }
         public DateTime CreatedOn { get; set; }
-       // public int Id { get; set; }
+		public int LangugeId { get; set; }
+		public Language Language { get; set; }
 
-    }
+
+	}
 }
