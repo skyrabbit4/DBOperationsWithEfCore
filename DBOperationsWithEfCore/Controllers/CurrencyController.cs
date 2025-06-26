@@ -35,10 +35,10 @@ namespace DBOperationsWithEfCore.Controllers
 
         }
 
-        [HttpGet("{name}")]
-        public async Task<IActionResult> GetCurrenciesByNameAsync([FromRoute] string name)
+        [HttpGet("{name}/{description}")]
+        public async Task<IActionResult> GetCurrenciesByNameAsync([FromRoute] string name, [FromRoute] string? description)
         {
-            var result = await _appDbContext.Currencies.Where(x=>x.Title==name).FirstOrDefaultAsync();
+            var result = await _appDbContext.Currencies.Where(x=>x.Title==name && x.Description==description).FirstOrDefaultAsync();
             return Ok(result);
 
         }
